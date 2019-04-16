@@ -1,0 +1,64 @@
+.Para {
+    height:50px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: #EFEFEF;
+    padding: 10px;
+    color: rgb(68, 63, 63);
+    font-size: 120%;
+    font-family: 'Montserrat', sans-serif;
+    animation: enable 0.3s linear;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.List {
+    overflow: auto;
+    height: 70%;
+}
+
+.Close {
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.Close:hover {
+    cursor: pointer;
+}
+
+.Close .Tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    font-size: 70%;
+    background-color: rgb(90, 83, 83);
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 2px;
+    position: absolute;
+    z-index: 1;
+    left: 65%;
+}
+
+span:hover .Tooltiptext {
+    visibility: visible;
+  }
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
