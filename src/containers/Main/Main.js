@@ -6,10 +6,15 @@ import Map from '../../components/Map/MapWithData';
 import BlankMap from '../../components/Map/BlankMap';
 import Input from '../../components/Input/Input';
 import { DragDropContext } from 'react-beautiful-dnd';
+import Loading from '../../components/Loading/Loading';
 
 import Logo from '../../components/Logo/Logo';
 
 class Main extends Component {
+
+    state = {
+        loading: true
+    }
 
     onDragEnd = result => {
         const {destination, source} = result;
@@ -30,9 +35,20 @@ class Main extends Component {
         this.props.changeStateDropHandler(newLocationName);
     }
 
+    closeLoadingPicture = () => {
+        this.setState({
+            ...this.state,
+            loading: false
+        })
+    }
+
     render() {
-       return(
-            <div className="container">
+       return(this.state.loading ?
+            (<div>
+            <Loading closePicture={this.closeLoadingPicture}/>
+            </div>)
+            :
+            (<div className="container">
                 <div className="row">
                     <div className="col-6">
                         <Logo />
@@ -57,16 +73,16 @@ class Main extends Component {
                             />
                             :
                             <BlankMap 
-                            googleMapURL="https://maps.googleapis.com/maps/api/js?key=process.env.REACT_APP_GOOGLE_MAPS_API"
+                            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKI87rlfOa_uqQKw2gNuf62bDkz_nlyAs"
                             loadingElement={<div style={{ height: `400px` }} />}
                             containerElement={<div style={{ width: `100%` }} />}
-                            mapElement={<div style={{ height: `600px`, width: '100%' }} />}
+                            mapElement={<div style={{ height: `90vh`, width: '100%' }} />}
                             center= {{ lat: 55.752121, lng: 37.617664 }}
                             />
                             }
                     </div>
                 </div>
-            </div>
+            </div>)
         );
     };
 }
