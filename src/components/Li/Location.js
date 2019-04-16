@@ -13,7 +13,7 @@ class Location extends Component {
                             {...provided.dragHandleProps}
                             ref={provided.innerRef}>
                                 <p className={classes.Para}>
-                                    {this.props.location} <span className={classes.Close} onClick={() => {this.props.delete(this.props.id)}}>  x<span className={classes.Tooltiptext}>Удалить</span></span>    
+                                    <span>{this.props.location}</span> <span className={classes.Close} onClick={() => {this.props.delete(this.props.id)}}>  x<span className={classes.Tooltiptext}>Удалить</span></span>    
                                 </p> 
                         </div>)
                     }}

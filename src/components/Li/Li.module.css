@@ -71,8 +71,11 @@
     }
 }
 
-@media(max-width: 450px) {
+@media(max-width: 530px) {
     .Close {
         opacity: 1;
+    }
+    .Para {
+        font-size: 3vw;
     }
 }
