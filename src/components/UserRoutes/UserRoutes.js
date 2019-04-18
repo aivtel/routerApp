@@ -12,7 +12,6 @@ class UserRoutes extends Component {
     }
 
     render () {
-        console.log(this.props.routesDB);
         let routes = null;
         if (!this.props.loading) {
             routes = this.props.routesDB.map((el, index) => <Route 

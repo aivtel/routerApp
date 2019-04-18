@@ -1,6 +1,6 @@
 .Route {
     height: 60px;
-    width: 50%;
+    width: 100%;
     text-transform: capitalize; 
     display: block; 
     margin: 5px 8px; 
@@ -13,7 +13,7 @@
 .Line {
     margin: 2px 5px;
     padding: 5px;
-    font-size:120%;
+    font-size:2vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: white;

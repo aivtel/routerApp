@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions';
-import List from '../../components/Li/Li';
+import List from '../../components/List/List';
 import Map from '../../components/Map/MapWithData';
 import BlankMap from '../../components/Map/BlankMap';
 import Input from '../../components/Input/Input';

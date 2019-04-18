@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import classes from './Li.module.css';
+import classes from './List.module.css';
 import { Droppable } from 'react-beautiful-dnd';
 import Location from './Location';
 
