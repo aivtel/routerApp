@@ -1,27 +1,17 @@
 import React from 'react';
 import classes from './Navbar.module.css';
 import {connect} from 'react-redux';
-import NavItem from './NavItems/NavItem/NavItem';
+import DrawerToggle from './DrawerToggle/DrawerToggle';
 import * as actions from '../../store/actions';
+import NavItems from './NavItems/NavItems';
 
 const navbar = (props) => {
-    return (<header className={classes.Navbar}>
-        <div className={classes.Auth}>
-            <NavItem link={'/userroutes'}>My routes</NavItem>
-            <button 
-                className={classes.Button}
-                onClick={() => {props.locationName.length > 0 ? props.saveLocationsToDB(props.locationName, props.userId, props.token) : alert("Выберите как минимум одну точку!")}}>Save current route</button>
-        </div>
-        {props.token === null ? 
-        <div className={classes.Auth}>
-            <NavItem link={'/login'}>Log In</NavItem>
-            <NavItem link={'/signup'}>Sign Up</NavItem>
-        </div> 
-        :
-        <div className={classes.Auth}>
-            <NavItem link={'/logout'}>Logout</NavItem>
-        </div>}
-
+    return (
+    <header className={classes.Header}>
+        <DrawerToggle />
+        <nav className={classes.DesktopOnly}>
+            <NavItems />
+        </nav>
     </header>)
 }
 
