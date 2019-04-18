@@ -5,7 +5,7 @@
     margin-right: auto;
     text-align: center;
     box-shadow: 4px 3px 3px rgba(0, 0, 0, 0.5);
-    background-color: #EFEFEF;
+    background-color: rgba(250, 250, 250, 0.938);
     padding: 10px;
     color: rgb(68, 63, 63);
     font-size: 120%;
@@ -13,11 +13,17 @@
     animation: enable 0.3s linear;
     border-radius: 5px;
     font-weight: 600;
+    border: 0.4px solid black;
 }
 
 .List {
     overflow: auto;
     height: 65vh;
+}
+
+.Para:hover {
+    background-color: rgb(180, 173, 166);
+    color: white;
 }
 
 .Close {

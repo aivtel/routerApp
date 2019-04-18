@@ -18,7 +18,7 @@ render() {
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBKI87rlfOa_uqQKw2gNuf62bDkz_nlyAs",
         loadingElement: <div style={{ height: `400px` }} />,
         containerElement: <div style={{ width: `100%` }} />,
-        mapElement: <div style={{height: `90vh`, width: `100%` }}  />,
+        mapElement: <div style={{height: `85vh`, width: `100%` }}  />,
       }),
       withScriptjs,
       withGoogleMap,

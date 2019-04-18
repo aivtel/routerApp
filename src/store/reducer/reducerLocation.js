@@ -4,7 +4,11 @@ const initialState = {
     destinationPoint: "",
     newAddress: "",
     waypoints: [],
-    sum: 0
+    userId: "",
+    fetchLoading: true,
+    sum: 0,
+    routesDB: [],
+    routesDBError: ''
 };
 
 const changeStateHandler = (state, arr) => {
@@ -102,12 +106,29 @@ const changeStateDropHandler = (state, action) => {
     return changeStateHandler (state, action.arr)
 };
 
+const fetchRoutesSuccess = (state, action) => {
+    return {
+        ...state,
+        routesDB: action.routes,
+        fetchLoading: false
+    }
+};
+
+const fetchRoutesFail = (state, action) => {
+    return {
+        ...state,
+        routesDBError: action.error
+    }
+}
+
 const reducer = (state = initialState, action) => {
         switch (action.type) {
             case "CHANGE_STATE_DROP_HANDLER": return changeStateDropHandler(state, action);
             case "INPUT_VALUE": return inputValue(state, action);
             case "DELETE_LIST_HANDLER": return deleteListHandler(state, action);
             case "INPUT_ON_CHANGE": return inputOnChange(state, action);
+            case "FETCH_ROUTES_SUCCESS": return fetchRoutesSuccess (state, action);
+            case "FETCH_ROUTES_FAIL": return fetchRoutesFail (state, action);
             default: return state
         }
 };
