@@ -10,7 +10,7 @@ const navbar = (props) => {
             <NavItem link={'/userroutes'}>My routes</NavItem>
             <button 
                 className={classes.Button}
-                onClick={() => {props.saveLocationsToDB(props.locationName, props.userId, props.token)}}>Save current route</button>
+                onClick={() => {props.locationName.length > 0 ? props.saveLocationsToDB(props.locationName, props.userId, props.token) : alert("Выберите как минимум одну точку!")}}>Save current route</button>
         </div>
         {props.token === null ? 
         <div className={classes.Auth}>
