@@ -160,7 +160,8 @@ export const fetchRoutes = (token, localId) => {
                 dispatch(fetchRoutesSuccess(routes));
             })
             .catch(err => {
-                dispatch(fetchRoutesFail(err))
+                dispatch(fetchRoutesFail(err));
+                alert("Ошибка в авторизации");
             });
     };
 };

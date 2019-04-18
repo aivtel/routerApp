@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions';
 import Route from './Route/Route';
@@ -18,11 +19,13 @@ class UserRoutes extends Component {
                                                                 key={el.userId+index}
                                                                 number={index+1} 
                                                                 locations={el.locations} /> )
-        }
-        return (
-            <div>
-               {routes}
-            </div>
+        };
+        return ( this.props.token !== null
+                    ?
+                    <div>
+                        {routes}
+                    </div>
+                    : <Redirect to="/" />
         )
     }
 }
@@ -32,7 +35,8 @@ const mapStateToProps = (state) => {
         token: state.auth.token,
         localId: state.auth.localId,
         routesDB: state.location.routesDB,
-        loading: state.location.fetchLoading
+        loading: state.location.fetchLoading,
+        error: state.location.routesDBError
     }
 };
 

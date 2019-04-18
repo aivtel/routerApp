@@ -118,9 +118,8 @@ const fetchRoutesFail = (state, action) => {
     return {
         ...state,
         routesDBError: action.error
-    }
 }
-
+}
 const reducer = (state = initialState, action) => {
         switch (action.type) {
             case "CHANGE_STATE_DROP_HANDLER": return changeStateDropHandler(state, action);
