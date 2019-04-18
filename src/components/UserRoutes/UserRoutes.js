@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions';
+import Route from './Route/Route';
 
 
 class UserRoutes extends Component {
@@ -13,9 +14,10 @@ class UserRoutes extends Component {
         console.log(this.props.routesDB);
         let routes = null;
         if (!this.props.loading) {
-            routes = this.props.routesDB.map((el) => {
-                    return el.locations.map((r, index) => <p key={el.userId+index}>{r}</p>)
-            })
+            routes = this.props.routesDB.map((el, index) => <Route 
+                                                                key={el.userId+index}
+                                                                number={index+1} 
+                                                                locations={el.locations} /> )
         }
         return (
             <div>
