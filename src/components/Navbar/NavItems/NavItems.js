@@ -13,8 +13,10 @@ const navItems = (props) => {
                 <NavItem link={'/userroutes'}>My routes</NavItem>
             <button 
                 className={classes.Button}
-                onClick={() => {props.locationName.length > 0 ? props.saveLocationsToDB(props.locationName, props.userId, props.token) : alert("Выберите как минимум одну точку!")}}>Save current route</button>
-        </div>
+                onClick={() => {props.locationName.length > 0 ? props.saveLocationsToDB(props.locationName, props.userId, props.token) : alert("Выберите как минимум одну точку!")}}
+                >
+                Save current route</button>
+            </div>
         
         {props.token === null ? 
         <div className={classes.Auth}>

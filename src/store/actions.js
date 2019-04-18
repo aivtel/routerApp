@@ -165,3 +165,9 @@ export const fetchRoutes = (token, localId) => {
             });
     };
 };
+
+export const toggleMenu = () => {
+    return {
+        type: "TOGGLE_MENU"
+    }
+};

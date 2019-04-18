@@ -8,7 +8,8 @@ const initialState = {
     fetchLoading: true,
     sum: 0,
     routesDB: [],
-    routesDBError: ''
+    routesDBError: '',
+    toggleMenu: false
 };
 
 const changeStateHandler = (state, arr) => {
@@ -119,7 +120,15 @@ const fetchRoutesFail = (state, action) => {
         ...state,
         routesDBError: action.error
 }
-}
+};
+
+const toggleMenu = (state) => {
+    return {
+        ...state,
+        toggleMenu: !state.toggleMenu
+    }
+};
+
 const reducer = (state = initialState, action) => {
         switch (action.type) {
             case "CHANGE_STATE_DROP_HANDLER": return changeStateDropHandler(state, action);
@@ -128,6 +137,7 @@ const reducer = (state = initialState, action) => {
             case "INPUT_ON_CHANGE": return inputOnChange(state, action);
             case "FETCH_ROUTES_SUCCESS": return fetchRoutesSuccess (state, action);
             case "FETCH_ROUTES_FAIL": return fetchRoutesFail (state, action);
+            case "TOGGLE_MENU": return toggleMenu(state, action);
             default: return state
         }
 };
