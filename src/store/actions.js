@@ -59,7 +59,7 @@ export const authSignUp = (email, password) => {
             returnSecureToken: true
         };
         
-        axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyAlZLMJx8rM1AGASE_zI7Y0dnKJas_RhYg', authData)
+        axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=process.env.REACT_APP_GOOGLE_FIREBASE_API', authData)
                 .then(res => {
                     // const expirationDate = new Date(new Date().getTime() + res.data.expiresIn * 1000);
                     localStorage.setItem('token', res.data.idToken);
@@ -85,7 +85,7 @@ export const authSignIn = (email, password) => {
             returnSecureToken: true
         };
         
-        axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyAlZLMJx8rM1AGASE_zI7Y0dnKJas_RhYg', authData)
+        axios.post('https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=process.env.REACT_APP_GOOGLE_FIREBASE_API', authData)
                 .then(res => {
                     // const expirationDate = new Date(new Date().getTime() + res.data.expiresIn * 1000);
                     localStorage.setItem('token', res.data.idToken);
